@@ -1,0 +1,120 @@
+/*
+Name: Azimiddinkhuja Abdushkurov
+ID: u1810045
+Program: menu driven program to get student details, calculate total
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+public:
+	int getStudentID(){
+		return studentID;
+	}
+	void setStudentID(int student_id){
+		studentID = student_id;
+	}
+	string getStudentName(){
+		return studentName;
+	}
+	void setStudentName(string student_name) {
+		studentName = student_name;
+	}
+	float getEng() {
+		return eng;
+	}
+	void setEng(float eng_r) {
+		eng = eng_r;
+	}
+	float getMath(){
+		return math;
+	}
+	void setMath(float math_r) {
+		math = math_r;
+	}
+	float getScience() {
+		return science;
+	}
+	void setSceince(float science_r){
+		science = science_r;
+	}
+	float getTotal(){
+		return calculate_total();
+	}
+
+
+private:
+	string studentName;
+	int studentID;
+	float eng, math, science, total;
+
+	float calculate_total(){
+		return eng + math + science;
+	};
+};
+
+int main(){
+	string s_name;
+	int s_id;
+	float s_eng, s_math, s_science;
+	Student s;
+
+	int option_num;
+
+	cout << "Choose one option: " << endl;
+	cout << "1. Set Student name " << endl;
+	cout << "2. Set Student id " << endl;
+	cout << "3. Set English score " << endl;
+	cout << "4. Set Math score " << endl;
+	cout << "5. Set Science score " << endl;
+	cout << "6. Get Student name " << endl;
+	cout << "7. Get Student id " << endl;
+	cout << "8. Get English score " << endl;
+	cout << "9. Get Math score " << endl;
+	cout << "10. Get Science score " << endl;
+	cout << "11. Calculate total: ";
+	cin >> option_num;
+	
+	switch (option_num)
+	{
+	case(1) :
+		cout << "Enter your name: ";
+		getline(cin, s_name);
+		s.setStudentName(s_name);
+	case(2) :
+		cout << "Enter your ID: ";
+		cin >> s_id;
+		s.setStudentID(s_id);
+	case(3) :
+		cout << "Enter your English: ";
+		cin >> s_eng;
+		s.setEng(s_eng);
+	case(4) :
+		cout << "Enter your Math: ";
+		cin >> s_math;
+		s.setEng(s_math);
+	case(5) :
+		cout << "Enter your Science: ";
+		cin >> s_science;
+		s.setEng(s_science);
+	case(6) :
+		s.getStudentName();
+	case(7) :
+		s.getStudentID();
+	case(8) :
+		s.getEng();
+	case(9) :
+		s.getMath();
+	case(10) :
+		s.getScience();
+	case(11) :
+		s.getTotal();
+	default:
+		break;
+	}
+	
+	system("pause");
+	return 0;
+}
